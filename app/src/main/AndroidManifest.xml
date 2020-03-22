@@ -9,6 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".PlayerSelectorActivity"></activity>
+        <activity android:name=".ScoreTrackerActivity" />
+        <activity android:name=".DiceRollerActivity" />
+        <activity android:name=".NewGameActivity" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".LogInActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
         activateDiceRollerBtn();
         activateScoreTrackerBtn();
         activatePlayerSelectorBtn();
+        activateGameHistoryBtn();
+
     }
 
     public void activateLogInBtn(){
@@ -100,4 +102,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void activateGameHistoryBtn(){
+        Button gameHistoryActivityBtn = (Button) findViewById(R.id.gameHistoryBtn);
+
+        gameHistoryActivityBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { //make an on click event
+                Intent startIntent = new Intent(getApplicationContext(), GameHistoryActivity.class);//make new intent which launches the .xml file you want
+                //startIntent.putExtra("org.example.quickLauncher.SOMETHING", "Hello World!");//pass in extra info to new window
+                startActivity(startIntent);//start the activity
+            }
+        });
+    }
+
+
 }

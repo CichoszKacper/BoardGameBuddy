@@ -7,59 +7,15 @@
     tools:context=".ScoreTrackerActivity">
 
     <TextView
-        android:id="@+id/enterScoresTextView"
+        android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Enter the Scores"
-        android:textSize="24sp"
+        android:text="Score Tracker View"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/playerCountTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
-        android:layout_marginLeft="108dp"
-        android:layout_marginTop="24dp"
-        android:text="How many players?"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enterScoresTextView" />
-
-    <EditText
-        android:id="@+id/playerCountEditText"
-        android:layout_width="47dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:inputType="number"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/playerCountTextView"
-        app:layout_constraintTop_toBottomOf="@+id/enterScoresTextView" />
-
-    <LinearLayout
-        android:id="@+id/scoresLinearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="437dp"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/enterButton"
-        tools:layout_editor_absoluteX="2dp">
-
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/enterButton"
-        android:layout_width="79dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="8dp"
-        android:text="Enter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playerCountTextView" />
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.027" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">BoardGameBuddy</string>
+    <string name="empty_not_saved">Sesion not saved because it is not complete.</string>
 </resources>

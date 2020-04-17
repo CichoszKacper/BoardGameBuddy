@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PlayerSelectorActivity"></activity>
+        <activity android:name=".NewGameSessionActivity"></activity>
+        <activity android:name=".GameHistoryActivity" />
+        <activity android:name=".PlayerSelectorActivity" />
         <activity android:name=".ScoreTrackerActivity" />
         <activity android:name=".DiceRollerActivity" />
         <activity android:name=".NewGameActivity" />

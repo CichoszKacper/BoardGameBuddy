@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.boardgamebuddy">
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,11 +15,26 @@
         <activity android:name=".NewGameSessionActivity"></activity>
         <activity android:name=".GameHistoryActivity" />
         <activity android:name=".PlayerSelectorActivity" />
+        <activity android:name=".ProfileActivity">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".PlayerSelectorActivity"
+            tools:ignore="DuplicateActivity" />
         <activity android:name=".ScoreTrackerActivity" />
-        <activity android:name=".DiceRollerActivity" />
+        <activity android:name=".DiceRollerActivity">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".NewGameActivity" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".LogInActivity" />
+        <activity android:name=".LogInActivity">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,6 +42,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-5558762603000681~2677113855"/>
     </application>
 
 </manifest>

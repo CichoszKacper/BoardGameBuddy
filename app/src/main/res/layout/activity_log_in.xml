@@ -4,18 +4,183 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#51a5e0"
     tools:context=".LogInActivity">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        android:adjustViewBounds="false"
+        android:fadingEdge="none"
+        app:layout_constraintDimensionRatio="w,1:1"
+        app:srcCompat="@drawable/boardgamebuddylogo"
+        tools:layout_editor_absoluteX="160dp"
+        tools:layout_editor_absoluteY="85dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.07"
+        tools:ignore="MissingConstraints" />
+    <View
+        android:id="@+id/view"
+        android:layout_width="370dp"
+        android:layout_height="450dp"
+        android:background="@drawable/round_outline"
+        android:outlineSpotShadowColor="@android:color/darker_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75"
+        tools:layout_editor_absoluteX="2dp" />
+    <View
+        android:layout_width="130dp"
+        android:layout_height="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="#51a5e0"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45"/>
     <TextView
-        android:id="@+id/textView"
+        android:layout_height="20dp"
+        android:layout_width="20dp"
+        android:text="OR"
+        android:textSize="15dp"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.45"
+         />
+
+    <View
+        android:layout_width="130dp"
+        android:layout_height="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="#51a5e0"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45"/>
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/loginpicture"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.17"
+        app:layout_constraintVertical_bias="0.55"/>
+
+    <EditText
+        android:id="@+id/usernameEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Log In View"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
+        android:ellipsize="none"
+        android:ems="10"
+        android:background="@android:color/darker_gray"
+        android:padding="5dp"
+        android:fadingEdge="horizontal|vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.106" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.55"
+        android:hint="Enter username..."
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="99dp"
+        tools:layout_editor_absoluteY="374dp"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/passwordicon"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.17"
+        app:layout_constraintVertical_bias="0.63"/>
+
+    <EditText
+        android:id="@+id/passwordEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter password..."
+        android:inputType="textPassword"
+        android:padding="5dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.63"
+        tools:layout_editor_absoluteX="99dp"
+        tools:layout_editor_absoluteY="441dp"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/google_Sign_In"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        android:clipToPadding="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.35"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="305dp" />
+
+    <Button
+        android:id="@+id/logInBtn"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:shadowColor="@android:color/holo_purple"
+        android:text="LOG IN"
+        android:outlineSpotShadowColor="@android:color/darker_gray"
+        android:background="#51a5e0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.8"/>
+
+    <TextView
+        android:id="@+id/registerBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No account? Register here"
+        android:textColor="@android:color/holo_blue_dark"
+        tools:layout_editor_absoluteX="208dp"
+        tools:layout_editor_absoluteY="557dp"
+        android:clickable="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintVertical_bias="0.85"
+        tools:ignore="MissingConstraints" />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

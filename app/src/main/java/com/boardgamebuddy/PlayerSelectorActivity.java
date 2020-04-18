@@ -13,7 +13,7 @@ import java.util.Random;
 
 public class PlayerSelectorActivity extends AppCompatActivity {
 
-    int numPlayers;
+    int numPlayers=2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +25,6 @@ public class PlayerSelectorActivity extends AppCompatActivity {
         TextView playersTextView = (TextView) findViewById(R.id.playersTextView);
         Button firstPlayerButton = (Button) findViewById(R.id.firstPlayerButton);
         TextView firstPlayerTextView = (TextView) findViewById(R.id.firstPlayerTextView);
-        //int numPlayers;
 
         numPlayersSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             int progressChangedValue =0;

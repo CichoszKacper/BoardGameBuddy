@@ -7,14 +7,63 @@
     tools:context=".PlayerSelectorActivity">
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/numPlayersTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Player Selector View"
+        android:text="How many players?"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.027" />
+        app:layout_constraintVertical_bias="0.112" />
+
+    <SeekBar
+        android:id="@+id/playersSeekBar"
+        android:layout_width="308dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="24dp"
+        android:max="6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numPlayersTextView" />
+
+    <TextView
+        android:id="@+id/playersTextView"
+        android:layout_width="45dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="2"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playersSeekBar" />
+
+    <Button
+        android:id="@+id/firstPlayerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="132dp"
+        android:text="Choose First Player"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playersTextView" />
+
+    <TextView
+        android:id="@+id/firstPlayerTextView"
+        android:layout_width="199dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:textColor="@color/browser_actions_text_color"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/firstPlayerButton" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

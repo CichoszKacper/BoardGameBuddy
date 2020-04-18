@@ -46,6 +46,16 @@ public class GameHistoryActivity extends AppCompatActivity {
                 startActivityForResult(intent, NEW_SESSION_ACTIVITY_REQUEST_CODE);
             }
         });
+
+        FloatingActionButton newFab = findViewById(R.id.newFab);
+        newFab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), StatisticsDisplayActivity.class);
+                startActivity(intent);
+
+            }
+        });
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -64,4 +74,6 @@ public class GameHistoryActivity extends AppCompatActivity {
                     Toast.LENGTH_LONG).show();
         }
     }
+
+
 }

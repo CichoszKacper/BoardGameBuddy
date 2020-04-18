@@ -32,7 +32,8 @@ public abstract class GameSessionRoomDatabase extends RoomDatabase {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                             GameSessionRoomDatabase.class, "game_session_database")
-                            .addCallback(sRoomDatabaseCallback).build();
+                            //.addCallback(sRoomDatabaseCallback).build();
+                            .allowMainThreadQueries().build();
                 }
             }
         }

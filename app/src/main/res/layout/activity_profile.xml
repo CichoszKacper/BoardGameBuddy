@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
+    android:background="#51a5e0"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity">
+
+    <ImageView
+        android:id="@+id/profile_image"
+        android:layout_width="116dp"
+        android:layout_height="118dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginLeft="144dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/circle"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.11" />
+    <TextView
+        android:id="@+id/change_pictre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change profile picture"
+        android:textColor="@android:color/background_light"
+        tools:layout_editor_absoluteX="208dp"
+        tools:layout_editor_absoluteY="557dp"
+        android:clickable="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.3"
+        tools:ignore="MissingConstraints" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="350dp"
+        android:layout_height="280dp"
+        android:background="@drawable/round_outline"
+        android:outlineSpotShadowColor="@android:color/darker_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.68"
+        tools:layout_editor_absoluteX="2dp" />
+
+    <TextView
+    android:id="@+id/user_name"
+    android:layout_width="300dp"
+    android:layout_height="49dp"
+    android:text="User name"
+    android:textSize="20dp"
+    tools:ignore="MissingConstraints"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintHorizontal_bias="0.5"
+    app:layout_constraintVertical_bias="0.5"
+    tools:layout_editor_absoluteX="169dp"
+    tools:layout_editor_absoluteY="28dp" />
+
+    <TextView
+        android:id="@+id/user_nameTitle"
+        android:layout_width="226dp"
+        android:layout_height="49dp"
+        android:text="User name"
+        android:textSize="15dp"
+        android:textColor="@android:color/holo_blue_light"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintVertical_bias="0.45"
+        tools:layout_editor_absoluteX="169dp"
+        tools:layout_editor_absoluteY="28dp" />
+
+    <View
+        android:layout_width="300dp"
+        android:layout_height="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.52"/>
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="300dp"
+        android:layout_height="49dp"
+        android:text="Email"
+        android:textSize="20dp"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.62"
+        tools:layout_editor_absoluteX="169dp"
+        tools:layout_editor_absoluteY="99dp" />
+
+    <TextView
+        android:id="@+id/email_title"
+        android:layout_width="226dp"
+        android:layout_height="49dp"
+        android:text="Email"
+        android:textSize="15dp"
+        android:textColor="@android:color/holo_blue_light"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintVertical_bias="0.58"
+        tools:layout_editor_absoluteX="169dp"
+        tools:layout_editor_absoluteY="28dp" />
+
+    <View
+        android:layout_width="300dp"
+        android:layout_height="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.63"/>
+
+    <TextView
+        android:id="@+id/user_id"
+        android:layout_width="300dp"
+        android:layout_height="49dp"
+        android:text="User id"
+        android:textSize="20dp"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.75"
+        tools:layout_editor_absoluteX="169dp"
+        tools:layout_editor_absoluteY="169dp" />
+
+    <TextView
+        android:id="@+id/user_id_title"
+        android:layout_width="226dp"
+        android:layout_height="49dp"
+        android:text="User ID"
+        android:textSize="15dp"
+        android:textColor="@android:color/holo_blue_light"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintVertical_bias="0.7"
+        tools:layout_editor_absoluteX="169dp"
+        tools:layout_editor_absoluteY="28dp" />
+
+    <View
+        android:layout_width="300dp"
+        android:layout_height="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75"/>
+
+    <Button
+        android:id="@+id/sign_out_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign Out"
+        android:textSize="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintVertical_bias="0.9"
+        tools:layout_editor_absoluteX="-44dp"
+        tools:layout_editor_absoluteY="493dp"
+        tools:ignore="MissingConstraints" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

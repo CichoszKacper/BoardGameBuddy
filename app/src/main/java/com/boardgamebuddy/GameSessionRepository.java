@@ -10,6 +10,9 @@ public class GameSessionRepository {
 
     private GameSessionDao mSessionDao;
     private LiveData<List<GameSession>> mAllSessions;
+    private int totalPlayTime;
+    private int totalSessions;
+    private int totalWins;
 
     // Note that in order to unit test the Repository, you have to remove the Application
     // dependency. This adds complexity and much more code, and this sample is not about testing.
@@ -19,6 +22,10 @@ public class GameSessionRepository {
         GameSessionRoomDatabase db = GameSessionRoomDatabase.getDatabase(application);
         mSessionDao = db.gameSessionDao();
         mAllSessions = mSessionDao.getOrderedGameSessions();
+        totalPlayTime = mSessionDao.getTotalTimePlayed();
+        totalSessions = mSessionDao.getTotalNumOfSessions();
+        totalWins = mSessionDao.getNumOfWins();
+
     }
 
     // Room executes all queries on a separate thread.
@@ -26,6 +33,10 @@ public class GameSessionRepository {
     LiveData<List<GameSession>> getAllSessions() {
         return mAllSessions;
     }
+
+    int getTotalPlayTime() { return totalPlayTime; }
+    int getTotalSessions() { return totalSessions; }
+    int getTotalWins() { return totalWins; }
 
     // You must call this on a non-UI thread or your app will throw an exception. Room ensures
     // that you're not doing any long running operations on the main thread, blocking the UI.

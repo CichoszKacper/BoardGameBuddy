@@ -20,4 +20,14 @@ public interface GameSessionDao {
     @Query("SELECT * from game_session ORDER BY date DESC")
     LiveData<List<GameSession>> getOrderedGameSessions();
 
+    @Query("SELECT SUM(duration) from game_session")
+    int getTotalTimePlayed();
+
+    @Query("SELECT COUNT(*) from game_session")
+    int getTotalNumOfSessions();
+
+    @Query("SELECT COUNT(*) from game_session WHERE won = 1")
+    int getNumOfWins();
+
+
 }

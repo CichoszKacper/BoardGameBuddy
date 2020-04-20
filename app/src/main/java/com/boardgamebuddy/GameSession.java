@@ -50,13 +50,32 @@ public class GameSession implements Serializable {
 
     public String getSession(){
         String output = "";
-        output += "id (for testing) " + this.id + "\n";
-        output += "ProfileID (for testing) " + this.ProfileID + "\n";
+        //output += "id (for testing) " + this.id + "\n";
+        //output += "ProfileID (for testing) " + this.ProfileID + "\n";
+        //default values are
+        //-1 for total players
+        //"Undefined" for game title
+        //Boolean for win/loss
+
+
+
         output += "Date: " + this.Date + "\n";
-        output += "Game: " + this.Game + "\n";
-        output += "Winner: " + this.Won + "\n";
+        if(this.Game.equalsIgnoreCase("Undefined")){
+            output += "Game: " + "Unspecified" + "\n";
+        } else{
+            output += "Game: " + this.Game + "\n";
+        }
+
+        if(this.Won){
+            output += "Outcome: " + "Won!" + "\n";
+        } else{
+            output += "Outcome: " + "Lost" + "\n";
+        }
+
         output += "Score: " + this.Score + "\n";
-        output += "Total players: " + this.NumOfPlayers + "\n";
+        if(this.NumOfPlayers == -1){
+            output += "Total players: " + "Unspecified" + "\n";
+        }
         output += "Duration in minutes: " + this.Duration;
         return output;
     }

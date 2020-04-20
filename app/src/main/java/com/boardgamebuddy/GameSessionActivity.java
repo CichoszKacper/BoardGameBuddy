@@ -54,6 +54,7 @@ public class GameSessionActivity extends AppCompatActivity {
         minusBtn = findViewById(R.id.minusBtn);
 
 
+
         minutesView.setVisibility(EditText.GONE);
 
         numOfPlayers = getIntent().getIntExtra("playerCount", 0);
@@ -63,7 +64,12 @@ public class GameSessionActivity extends AppCompatActivity {
             playerCount.setText("Player Count: " + numOfPlayers);
         }
          title = getIntent().getStringExtra("title");
-        gameTitle.setText("Game: " + title);
+        if(title.equalsIgnoreCase("Undefined")){
+            gameTitle.setVisibility(EditText.GONE);
+        } else{
+            gameTitle.setText("Game: " + title);
+        }
+
         score.setText(Integer.toString(getIntent().getIntExtra("score", 0)));
 
         activateFinishBtn();

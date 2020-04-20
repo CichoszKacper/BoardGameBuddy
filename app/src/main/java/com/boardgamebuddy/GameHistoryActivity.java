@@ -38,14 +38,14 @@ public class GameHistoryActivity extends AppCompatActivity {
             }
         });
 
-        FloatingActionButton fab = findViewById(R.id.fab);
+        /*FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(GameHistoryActivity.this, NewGameSessionActivity.class);
                 startActivityForResult(intent, NEW_SESSION_ACTIVITY_REQUEST_CODE);
             }
-        });
+        });*/
 
         FloatingActionButton newFab = findViewById(R.id.newFab);
         newFab.setOnClickListener(new View.OnClickListener() {

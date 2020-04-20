@@ -64,7 +64,7 @@ public class GameSessionActivity extends AppCompatActivity {
         }
          title = getIntent().getStringExtra("title");
         gameTitle.setText("Game: " + title);
-        score.setText(Integer.toString(getIntent().getIntExtra("score", 0)));
+        score .setText(Integer.toString(getIntent().getIntExtra("score", 0)));
 
         activateFinishBtn();
         long miliseconds = 1000;

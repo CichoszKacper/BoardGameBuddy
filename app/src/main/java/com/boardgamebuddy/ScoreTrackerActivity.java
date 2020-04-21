@@ -15,51 +15,84 @@ import android.widget.TextView;
 
 public class ScoreTrackerActivity extends AppCompatActivity {
 
+    private Button plusBtn;
+    private Button minusBtn;
+    private TextView score;
+    private Button plusBtn2;
+    private Button minusBtn2;
+    private TextView score2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score_tracker);
 
-//        Button enterBtn = (Button) findViewById(R.id.enterButton);
-//        final EditText playerCount = (EditText) findViewById(R.id.playerCountEditText);
-//        final LinearLayout scores = (LinearLayout) findViewById(R.id.scoresLinearLayout);
-//
-//
-//        enterBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                int players;
-//                scores.removeAllViews();
-//                if (playerCount.getText().toString().isEmpty()){
-//                    players = 0;
-//                } else{
-//                    players = Integer.parseInt(playerCount.getText().toString());
-//                }
-//
-//                for (int i=0; i< players; i++){
-//                    LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
-//                            LinearLayout.LayoutParams.WRAP_CONTENT);
-//
-//                    TextView playerName = new TextView(ScoreTrackerActivity.this);
-//                    playerName.setText("Player "+ String.valueOf(i+1));
-//                    playerName.setLayoutParams(params);
-//                    playerName.setId(ViewCompat.generateViewId());
-//                    playerName.setPadding(10,10,10,10);
-//                    scores.addView(playerName);
-//
-//                    EditText playerScore = new EditText(ScoreTrackerActivity.this);
-//                    playerScore.setLayoutParams(params);
-//                    playerScore.setInputType(InputType.TYPE_CLASS_NUMBER);
-//                    playerScore.setId(ViewCompat.generateViewId());
-//                    playerScore.setPadding(10,10,10,10);
-//                    scores.addView(playerScore);
-//
-//
-//                }
-//            }//end of onclick
-//        });
+        score = findViewById(R.id.currentScoreText);
+        plusBtn = findViewById(R.id.plusBtn);
+        minusBtn = findViewById(R.id.minusBtn);
 
+        score2 = findViewById(R.id.currentScoreText2);
+        plusBtn2 = findViewById(R.id.plusBtn2);
+        minusBtn2 = findViewById(R.id.minusBtn2);
 
+        score.setText(Integer.toString(0));
+        score2.setText(Integer.toString(0));
 
-    }//end
+        plusBtnClick();
+        minusBtnClick();
+        plusBtnClick2();
+        minusBtnClick2();
+
+    }//end oncreate
+
+    public void plusBtnClick(){
+        plusBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { //make an on click event
+                int current = Integer.parseInt(score.getText().toString());
+                current++;
+                //update display
+                score.setText("" + current);
+            }
+        });
+
+    }
+    public void plusBtnClick2(){
+        plusBtn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { //make an on click event
+                int current = Integer.parseInt(score2.getText().toString());
+                current++;
+                //update display
+                score2.setText("" + current);
+            }
+        });
+
+    }
+
+    public void minusBtnClick(){
+        minusBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { //make an on click event
+                int current = Integer.parseInt(score.getText().toString());
+                current--;
+                //update display
+                score.setText("" + current);
+            }
+        });
+
+    }
+
+    public void minusBtnClick2(){
+        minusBtn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { //make an on click event
+                int current = Integer.parseInt(score2.getText().toString());
+                current--;
+                //update display
+                score2.setText("" + current);
+            }
+        });
+
+    }
 }

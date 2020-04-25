@@ -5,20 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".NewGameActivity">
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        app:srcCompat="@drawable/main_background"
+        android:scaleType="fitXY"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/scoreEditText"
         android:layout_width="166dp"
         android:layout_height="44dp"
-        android:editable="true"
         android:ems="10"
+        android:background="#edb879"
+        android:hint="Enter score..."
+        android:textSize= "20dp"
         android:inputType="number"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.827"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.651" />
+        app:layout_constraintVertical_bias="0.651"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal" />
 
     <EditText
         android:id="@+id/secondsEditText"
@@ -27,24 +38,12 @@
         android:layout_marginTop="36dp"
         android:layout_marginEnd="124dp"
         android:layout_marginRight="124dp"
+        android:background="#edb879"
         android:ems="10"
+        android:hint="Sec"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/timerTextView" />
-
-    <TextView
-        android:id="@+id/newGameTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Start a New Game"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.028" />
 
     <TextView
         android:id="@+id/playersTextView"
@@ -52,23 +51,27 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="68dp"
         android:layout_marginLeft="68dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="40dp"
         android:text="Number of players:"
+        android:textStyle="bold"
+        android:textColor="@android:color/background_light"
         android:textSize="22sp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/newGameTextView" />
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/playersEditText"
         android:layout_width="40dp"
         android:layout_height="45dp"
-        android:layout_marginTop="28dp"
+        android:background="#edb879"
+        android:layout_marginTop="40dp"
         android:ems="10"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.069"
         app:layout_constraintStart_toEndOf="@+id/playersTextView"
-        app:layout_constraintTop_toBottomOf="@+id/newGameTextView" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/timerTextView"
@@ -78,6 +81,8 @@
         android:layout_marginLeft="192dp"
         android:layout_marginTop="36dp"
         android:text="Timer:"
+        android:textStyle="bold"
+        android:textColor="@android:color/background_light"
         android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/playersTextView" />
@@ -86,6 +91,7 @@
         android:id="@+id/timerSwitch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#edb879"
         android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.085"
@@ -99,7 +105,9 @@
         android:layout_marginStart="192dp"
         android:layout_marginLeft="192dp"
         android:layout_marginTop="36dp"
+        android:background="#edb879"
         android:ems="10"
+        android:hint="@string/min"
         android:inputType="number"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/timerTextView" />
@@ -110,6 +118,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:text=":"
+        android:textColor="#edb879"
         android:textSize="24sp"
         app:layout_constraintEnd_toStartOf="@+id/secondsEditText"
         app:layout_constraintHorizontal_bias="0.0"
@@ -118,9 +127,11 @@
 
     <Button
         android:id="@+id/startBtn"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:background="@drawable/round_outline"
         android:text="Start"
+        android:textColor="#652810"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -133,8 +144,10 @@
         android:id="@+id/textViewTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Game Title:"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:text="Game Title:"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:textColor="@android:color/background_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.093"
@@ -146,8 +159,10 @@
         android:id="@+id/scoreViewTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Starting Score"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:text="Starting Score:"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/background_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.093"
@@ -173,12 +188,17 @@
         android:layout_width="196dp"
         android:layout_height="49dp"
         android:ems="10"
+        android:background="#edb879"
+        android:textSize= "20dp"
+        android:hint="Enter game title..."
+        android:textAlignment= "center"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.829"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.525" />
+        app:layout_constraintVertical_bias="0.525"
+        android:gravity="center_horizontal" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,5 @@
 package com.boardgamebuddy;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
@@ -8,7 +7,6 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -16,8 +14,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 
 import java.io.IOException;
@@ -49,37 +45,27 @@ public class ProfileActivity extends AppCompatActivity {
         signOutButton = findViewById(R.id.sign_out_button);
         changePicture = findViewById(R.id.change_pictre);
 
+        //Sign out user from app using singOutGoogle
         gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
 
         googleSignInClient = GoogleSignIn.getClient(this, gso);
 
-        signOutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                googleSignInClient.signOut().addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        goToLogInActivity();
-                    }
-                });
+        signOutButton.setOnClickListener(v -> googleSignInClient.signOut().addOnSuccessListener(aVoid -> goToMainActivity()));
 
-            }
+        //Choose picture from phone
+        changePicture.setOnClickListener(v -> {
+            Intent choosePicture = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+            startActivityForResult(choosePicture,1);
         });
 
-        changePicture.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent choosePicture = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(choosePicture,1);
-            }
-        });
-
+        activateGameHistoryBtn();
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
+        //Change profile picture for selected before using option "Change profile picture"
         if (requestCode == 1 && resultCode == RESULT_OK && data!=null) {
             Uri selectedImage = data.getData();
 
@@ -94,11 +80,12 @@ public class ProfileActivity extends AppCompatActivity {
 
     }
 
-    private void goToLogInActivity() {
-        startActivity(new Intent(ProfileActivity.this,LogInActivity.class));
+    //Function redirecting from Profile to Main Activity
+    private void goToMainActivity() {
+        startActivity(new Intent(ProfileActivity.this,MainActivity.class));
         finish();
     }
-
+    //Function to set information in Profile for using information from Google account
     public void handleSignInResults (Task<GoogleSignInAccount> googleSignInResult){
         if (googleSignInResult.isComplete()){
             GoogleSignInAccount account = googleSignInResult.getResult();
@@ -108,7 +95,7 @@ public class ProfileActivity extends AppCompatActivity {
             userId.setText(account.getId());
 
         }else {
-            goToLogInActivity();
+            goToMainActivity();
         }
     }
 
@@ -116,12 +103,17 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        googleSignInClient.silentSignIn().addOnCompleteListener(this, new OnCompleteListener<GoogleSignInAccount>() {
-            @Override
-            public void onComplete(@NonNull Task<GoogleSignInAccount> task) {
-                handleSignInResults(task);
-            }
-        });
+        googleSignInClient.silentSignIn().addOnCompleteListener(this, task -> handleSignInResults(task));
 
+    }
+
+    //Function which activates Game History Activity using button in Profile
+    public void activateGameHistoryBtn(){
+        Button gameHistoryActivityBtn = findViewById(R.id.gameHistoryBtn);
+
+        gameHistoryActivityBtn.setOnClickListener(v -> { //make an on click event
+            Intent startIntent = new Intent(getApplicationContext(), GameHistoryActivity.class);//make new intent which launches the .xml file you want
+            startActivity(startIntent);//start the activity
+        });
     }
 }

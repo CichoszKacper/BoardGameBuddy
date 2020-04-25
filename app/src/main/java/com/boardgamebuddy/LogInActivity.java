@@ -19,7 +19,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.SignInButton;
 
-import java.time.Instant;
 
 
 public class LogInActivity extends AppCompatActivity {
@@ -32,6 +31,7 @@ public class LogInActivity extends AppCompatActivity {
     public EditText passwordEditText;
 
 
+    //Unfinished function to log in using username and password
     public void signIn (View view) {
         usernameEditText = findViewById(R.id.usernameEditText);
         passwordEditText = findViewById(R.id.passwordEditText);
@@ -50,42 +50,53 @@ public class LogInActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
-        // Configure sign-in to request the user's ID, email address, and basic
-        // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestEmail()
-                .build();
-        // Build a GoogleSignInClient with the options specified by gso.
-        // Build a GoogleSignInClient with the options specified by gso.
-        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-        signInButton = findViewById(R.id.google_Sign_In);
-        signInButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+    }
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        setContentView(R.layout.activity_log_in);
+
+        // Check for existing Google Sign In account, if the user is already signed in
+        // the GoogleSignInAccount will be non-null.
+        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+        if (account!=null){
+            startActivity(new Intent(LogInActivity.this, MainActivity.class));
+        }else {
+            // Configure sign-in to request the user's ID, email address, and basic
+            // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
+            GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                    .requestEmail()
+                    .build();
+
+            // Build a GoogleSignInClient with the options specified by gso.
+            mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+            signInButton = findViewById(R.id.google_Sign_In);
+            signInButton.setOnClickListener(v -> {
                 Intent intent = mGoogleSignInClient.getSignInIntent();
                 startActivityForResult(intent,SIGN_IN);
+            });
 
-            }
-        });
-
-        // Build link to register when no account created before
-        TextView registerLink = findViewById(R.id.registerBtn);
-        registerLink.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            // Build link to register when no account created before
+            TextView registerLink = findViewById(R.id.registerBtn);
+            registerLink.setOnClickListener(v -> {
                 Intent registerIntent = new Intent(LogInActivity.this, RegisterActivity.class);
                 startActivity(registerIntent);
-            }
-        });
+            });
 
-        //Build log in button option
-        final EditText usernameEditText = findViewById(R.id.usernameEditText);
-        final EditText passwordEditText = findViewById(R.id.passwordEditText);
+            TextView guestPlay = findViewById(R.id.guestBtn);
+            guestPlay.setOnClickListener(v -> {
+                Intent guestIntent = new Intent(LogInActivity.this,MainActivity.class);
+                startActivity(guestIntent);
+            });
 
-        Button logInButton = findViewById(R.id.logInBtn);
-        logInButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            //Build log in button option
+            final EditText usernameEditText = findViewById(R.id.usernameEditText);
+            final EditText passwordEditText = findViewById(R.id.passwordEditText);
+
+            Button logInButton = findViewById(R.id.logInBtn);
+            logInButton.setOnClickListener(v -> {
                 if (usernameEditText.getText().toString().matches("") || passwordEditText.getText().toString().matches("")){
                     Toast.makeText(LogInActivity.this, "Please enter username and password", Toast.LENGTH_SHORT).show();
                 }
@@ -93,23 +104,9 @@ public class LogInActivity extends AppCompatActivity {
                     Intent login = new Intent(LogInActivity.this,ProfileActivity.class);
                     startActivity(login);
                 }
-            }
-        });
+            });
+        }
     }
-
-
-//    @Override
-//    protected void onStart() {
-//        super.onStart();
-//        setContentView(R.layout.activity_log_in);
-//
-//        // Check for existing Google Sign In account, if the user is already signed in
-//        // the GoogleSignInAccount will be non-null.
-//        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
-//        if (account!=null){
-//            startActivity(new Intent(LogInActivity.this, ProfileActivity.class));
-//        }
-//    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -119,14 +116,13 @@ public class LogInActivity extends AppCompatActivity {
             result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
 
             if (result.isSuccess()){
-                startActivity(new Intent(LogInActivity.this, ProfileActivity.class));
+                startActivity(new Intent(LogInActivity.this, MainActivity.class));
 
             }else {
                 Toast.makeText(this, "Login unsuccessful", Toast.LENGTH_SHORT).show();
             }
         }
     }
-
 
 
 }

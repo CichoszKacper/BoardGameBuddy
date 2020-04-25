@@ -6,17 +6,39 @@
     android:layout_height="match_parent"
     tools:context=".PlayerSelectorActivity">
 
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        app:srcCompat="@drawable/main_background"
+        android:scaleType="fitXY"
+        tools:ignore="MissingConstraints" />
+    
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="250dp"
+        android:layout_margin="26dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/round_outline"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.112"
+        tools:ignore="MissingConstraints"
+        android:layout_marginLeft="10dp" />
+    
     <TextView
         android:id="@+id/numPlayersTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="How many players?"
+        android:textColor="#652810"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.112" />
+        app:layout_constraintVertical_bias="0.212" />
 
     <SeekBar
         android:id="@+id/playersSeekBar"
@@ -36,6 +58,7 @@
         android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="2"
+        android:textColor="#652810"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -44,10 +67,12 @@
 
     <Button
         android:id="@+id/firstPlayerButton"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="132dp"
+        android:background="@drawable/round_outline"
         android:text="Choose First Player"
+        android:textColor="#652810"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -60,7 +85,7 @@
         android:layout_height="34dp"
         android:layout_marginTop="8dp"
         android:gravity="center"
-        android:textColor="@color/browser_actions_text_color"
+        android:textColor="@android:color/background_light"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

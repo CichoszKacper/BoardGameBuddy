@@ -17,33 +17,21 @@
         <activity android:name=".NewGameSessionActivity" />
         <activity android:name=".GameHistoryActivity" />
         <activity android:name=".PlayerSelectorActivity" />
-        <activity android:name=".ProfileActivity">
-            <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".ProfileActivity"/>
         <activity android:name=".PlayerSelectorActivity"
             tools:ignore="DuplicateActivity" />
         <activity android:name=".ScoreTrackerActivity" />
-        <activity android:name=".DiceRollerActivity">
-            <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".DiceRollerActivity"/>
         <activity android:name=".NewGameActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LogInActivity">
-            <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity"/>
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-5558762603000681~2677113855"/>

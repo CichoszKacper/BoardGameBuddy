@@ -8,6 +8,13 @@
     tools:context=".LogInActivity">
 
     <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        app:srcCompat="@drawable/main_background"
+        android:scaleType="fitXY"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
         android:id="@+id/imageView"
         android:layout_width="0dp"
         android:layout_height="90dp"
@@ -163,6 +170,23 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintVertical_bias="0.8"/>
+
+    <TextView
+        android:id="@+id/guestBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Play as guest"
+        android:textColor="@android:color/holo_blue_dark"
+        tools:layout_editor_absoluteX="208dp"
+        tools:layout_editor_absoluteY="557dp"
+        android:clickable="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintVertical_bias="0.85"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/registerBtn"
